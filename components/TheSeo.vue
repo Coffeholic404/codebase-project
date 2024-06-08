@@ -8,7 +8,7 @@
             <h4 class="seo__heading relative">01 .search engine optimization</h4>
         </div>
         <div class=" flex flex-col items-center justify-center mt-8">
-            <h2 class=" max-w-[12ch] leading-[1] tracking-[-.05] text-[4em] font-bold text-titles-links ">
+            <h2 class=" title-lg max-w-[12ch] leading-[1] tracking-[-.05] text-[4em] font-bold text-titles-links ">
                 SEO controls, under control
             </h2>
             <div class=" max-w-[32em] mt-6">
@@ -78,6 +78,23 @@
 }
 
 
+@media (max-width: 479px) {
 
+  .title-lg {
+        letter-spacing: -.01em;
+        font-size: 1.875em;
+    }
+}
 
+@media (min-width: 500px) and (max-width: 766px){
+    .title-lg {
+        font-size: 3.25em;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .title-lg {
+        font-size: 3.25em;
+    }
+}
 </style>

@@ -12,8 +12,8 @@ import { Icon } from "@iconify/vue";
       <div class="wrapper py-[9em] ">
         <div class="w-full py-[5em] h-full wrapper__continer">
           <div class="w-full max-w-[48em] mx-auto px-[1.25em]">
-            <div>
-              <h2 class="title__sm text-[3em] text-titles-links  font-bold text-center">Get help from hundred of web <a
+            <div class="">
+              <h2 class="title__sm  text-[3em] text-titles-links  font-bold text-center">Get help from hundred of web <a
                   class=" text-primary" href="#">sections</a>, and ready-to-use <a class=" text-primary"
                   href="#">templates</a> to grow your business.</h2>
               <div class="start__wrapper mt-8">
@@ -496,6 +496,15 @@ h5 {
 }
 
 @media (max-width: 479px) {
+  .title__sm {
+    font-size: 1.75em;
+  }
+
+  .title-lg {
+        letter-spacing: -.01em;
+        font-size: 1.875em;
+    }
+
   .padding-6xl {
         padding: 2.5em 1.5em; 
     }
