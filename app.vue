@@ -5,7 +5,7 @@ import { Icon } from "@iconify/vue";
 <template>
   <div>
 
-    <div class="nav__wrapper">
+    <div class="nav__wrapper relative">
       <TheNavbar />
     </div>
     <div>
