@@ -11,7 +11,7 @@
             <h2 class=" title-lg max-w-[12ch] leading-[1] tracking-[-.05] text-[4em] font-bold text-titles-links ">
                 SEO controls, under control
             </h2>
-            <div class=" max-w-[32em] mt-6">
+            <div class="title-sm max-w-[32em] mt-6">
                 <p class=" tracking-[-.01] text-[1.5em] text-center  ">
                     Optimize your website SEO with fine-tuned controls, high-performance hosting, and flexible content management tools.
                 </p>
@@ -77,6 +77,11 @@
     background-image: linear-gradient(to right, var(--border), rgba(33, 38, 45, 0));
 }
 
+.title-sm {
+    letter-spacing: -.01em;
+    font-size: 1.5em;
+}
+
 
 @media (max-width: 479px) {
 
@@ -84,11 +89,20 @@
         letter-spacing: -.01em;
         font-size: 1.875em;
     }
+
+    .title-sm {
+        font-size: .75em;
+    }
 }
 
 @media (min-width: 500px) and (max-width: 766px){
     .title-lg {
         font-size: 3.25em;
+    }
+
+    .title-sm {
+        font-size: 1.175em;
+        line-height: 1.4;
     }
 }
 
