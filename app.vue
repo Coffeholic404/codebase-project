@@ -175,8 +175,9 @@ import { Icon } from "@iconify/vue";
     <FeatureTwo />
   </article>
 
-
- 
+  <article class="feature3-wrapper w-full min-h-[100dvh] py-[5em] bg-amber-900">
+      <FeatureThree />
+  </article>
 </template>
 
 <style scoped>
@@ -493,6 +494,13 @@ h5 {
 .banner-text-xl {
     letter-spacing: -.01em;
     font-size: 1.5em;
+}
+
+.feature3-wrapper {
+  background-image: linear-gradient(to top, var(--background), rgba(13, 17, 23, 0) 15%), linear-gradient(to bottom, var(--background), rgba(13, 17, 23, 0) 15%), radial-gradient(circle farthest-side at 50% 0%, rgba(13, 17, 23, 0), var(--background)), url(/assets/imgs/bg-tile-dark.svg);
+    background-position: 0 0, 0 0, 0 0, -1px -1px;
+    background-size: auto, auto, auto, 64px;
+    position: relative;
 }
 
 @media (max-width: 479px) {
