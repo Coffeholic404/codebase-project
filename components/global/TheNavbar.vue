@@ -34,8 +34,8 @@ onUnmounted(() => {
                 <li>
                     <p popovertarget="support_modal">Support</p>
                 </li>
-                <li>
-                    <p>Product</p>
+                <li class=" relative">
+                    <p class=" relative">Product</p>
                 </li>
                 <li>
                     <p>Company</p>
@@ -97,6 +97,17 @@ onUnmounted(() => {
 
 .navbtn {
     grid-column: 3/4;
+}
+
+@media (max-width: 479px) {
+    .navbar.scrolled{
+        margin-inline: 1em;
+    }
+
+    .navbar.scrolled {
+        display: sticky;
+        top: 0;
+    }
 }
 
 @media (min-width: 991px) {
