@@ -186,6 +186,14 @@ import { Icon } from "@iconify/vue";
   <article class=" relative overflow-hidden">
     <Steps />
   </article>
+
+  <article class=" z-[5] w-full max-w-[48em] mx-auto px-[1.25em] relative">
+    <ProcessSteps />
+  </article>
+
+  <footer class="z-[10] w-full bg-background text-background mt-[4em] pb-[2em] relative">
+    <Footer />
+  </footer>
 </template>
 
 <style scoped>
