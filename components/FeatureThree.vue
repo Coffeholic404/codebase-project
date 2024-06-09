@@ -9,13 +9,13 @@ import { Icon } from "@iconify/vue";
                 <div class="feature-heading mb-[1.75em] margin-bottom margin-xl">
                     <div class="caption-holder">
                         <div class="w-layout-grid feat-row-sm">
-                            <div class="heading-caption leading-[.1em] uppercase text-[.625em] font-semibold">Feature ·</div>
+                            <div class="heading-caption leading-[.1em] uppercase text-[.625em] font-semibold">Feature ·
+                            </div>
                             <div class="leading-[.1em] uppercase text-[.625em] font-semibold opacity-[.5]">02</div>
                         </div>
 
                         <div c class="line-holder">
-                            <div class="line-animated"
-                                ></div>
+                            <div class="line-animated"></div>
                         </div>
                     </div>
                 </div>
@@ -30,11 +30,38 @@ import { Icon } from "@iconify/vue";
                             <h2 class="title-md">Website content <span class="text-amber">management</span>
                                 made easy.</h2>
                         </div>
-                        <div class="text-lg  max-w-[48ch]">Webflow gives you fine level control over SEO markup, indexing rules,
+                        <div class="text-lg  max-w-[48ch]">Webflow gives you fine level control over SEO markup,
+                            indexing rules,
                             redirects, and more — push any changes live without relying on engineers.</div>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="tab-holder pl-[4em]">
+            <div class="tab-menu">
+                <a href="" 
+                class="tab-menu-click tab-menu-current  flex text-center rounded-[.375em] justify-center items-center py-[2em] text-[.875em] font-semibold leading-[1]">
+                    <p>Kanban</p>
+                </a>
+                <a href="" class="tab-link-simple tab-menu-click flex text-center rounded-[.375em] justify-center items-center py-[2em] text-[.875em] font-semibold leading-[1]">
+                    <p>User Story Map</p>
+                </a>
+                <a href="" class="tab-link-simple tab-menu-click flex text-center rounded-[.375em] justify-center items-center py-[2em] text-[.875em] font-semibold leading-[1]">
+                    <p>Retrospective</p>
+                </a>
+                <a href="" class="tab-link-simple tab-menu-click flex text-center rounded-[.375em] justify-center items-center py-[2em] text-[.875em] font-semibold leading-[1]">
+                    <p>PI Planning</p>
+                </a>
+                <a href="" class="tab-link-simple tab-menu-click flex text-center rounded-[.375em] justify-center items-center py-[2em] text-[.875em] font-semibold leading-[1]">
+                    <p>Daily Standup</p>
+                </a>
+            </div>  
+            <div class="tab-simple-content static overflow-hidden">
+                    <div class=" static">
+                        <img srcset="https://assets-global.website-files.com/6239c2cd52949d0f76a8f421/6239c2ce52949d7779a8f704_blog-post-07-p-1080.jpeg 1080w, https://assets-global.website-files.com/6239c2cd52949d0f76a8f421/6239c2ce52949d7779a8f704_blog-post-07.jpg 1280w" alt="" src="https://assets-global.website-files.com/6239c2cd52949d0f76a8f421/6239c2ce52949d7779a8f704_blog-post-07.jpg" loading="lazy" sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 991px) 96vw, 90vw" class="image-contain rounded-[.5em] relative overflow-hidden max-w-full align-middle inline-block z-[5] w-full leading-[1] object-contain">
+                    </div>
+            </div> 
         </div>
     </div>
 </template>
@@ -141,6 +168,51 @@ import { Icon } from "@iconify/vue";
     line-height: 1.5;
 }
 
+.tab-menu-click {
+    transition: opacity .25s;
+    letter-spacing: -.01em;
+}
+
+.tab-menu-current {
+    background-color: var(--background);
+    opacity: 1;
+    color: var(--amber-400);
+    background-image: linear-gradient(rgba(245, 158, 11, .1), rgba(245, 158, 11, .1));
+    box-shadow: inset 0 0 0 1px rgba(251, 191, 36, .4);
+}
+
+.tab-link-simple {
+    background-color: var(--neutral-800);
+    opacity: .5;
+    color: var(--titles-links);
+    text-align: center;
+    letter-spacing: -.01em;
+    border-radius: .375em;
+    flex: 1;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    font-size: .875em;
+    font-weight: 600;
+    line-height: 1;
+    transition: opacity .25s;
+}
+
+.tab-link-simple:hover {
+    opacity: 1;
+}
+
+.tab-menu {
+    z-index: 5;
+    grid-column-gap: .5em;
+    grid-row-gap: .5em;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
+    margin-bottom: 1em;
+    display: grid;
+}
+
 
 @media (max-width: 479px) {
     .feature {
@@ -174,6 +246,11 @@ import { Icon } from "@iconify/vue";
     .text-lg {
         font-size: 1.125em;
     }
+
+    .tab-holder {
+        padding-left: 0;
+    }
+
 }
 
 @media (min-width: 500px) and (max-width: 767px){
@@ -209,6 +286,8 @@ import { Icon } from "@iconify/vue";
     .text-lg {
         font-size: 1.125em;
     }
+
+
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -229,5 +308,12 @@ import { Icon } from "@iconify/vue";
     .title-md {
         font-size: 3.5em;
     }
+
+    .tab-simple-menu {
+        width: 100%;
+        display: flex;
+        overflow: scroll;
+    }
+
 }
 </style>

@@ -178,6 +178,14 @@ import { Icon } from "@iconify/vue";
   <article class="feature3-wrapper w-full min-h-[100dvh] py-[5em] bg-amber-900">
       <FeatureThree />
   </article>
+
+  <article class="w-full relative">
+    <TechStartups />
+  </article>
+
+  <article class=" relative overflow-hidden">
+    <Steps />
+  </article>
 </template>
 
 <style scoped>
