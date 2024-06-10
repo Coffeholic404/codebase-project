@@ -106,20 +106,17 @@
                     </div>
                 </div>
             </div>
-            <div  class="footer-1-meta col-span-1 row-span-1">
+            <div class="footer-1-meta col-span-1 row-span-1">
                 <div class="footer-row-base column-mobile">
-                    <a 
-                    
-                        href="#" class="footer-1-link-gray col-span-1 row-span-1">©
+                    <a href="#" class="footer-1-link-gray col-span-1 row-span-1">©
                         Template, Inc.</a>
-                        <a 
-                        href="/getting-started/style-guide" class="footer-1-link-gray col-span-1 row-span-1">Style Guide</a><a
-                         href="/getting-started/instructions"
+                    <a href="/getting-started/style-guide" class="footer-1-link-gray col-span-1 row-span-1">Style
+                        Guide</a><a href="/getting-started/instructions"
                         class="footer-1-link-gray col-span-1 row-span-1">Instructions</a><a
-                         href="/getting-started/licensing"
+                        href="/getting-started/licensing"
                         class="footer-1-link-gray col-span-1 row-span-1">Licensing</a><a
-                         href="/getting-started/changelog"
-                        class="footer-1-link-gray col-span-1 row-span-1">Changelog</a></div>
+                        href="/getting-started/changelog" class="footer-1-link-gray col-span-1 row-span-1">Changelog</a>
+                </div>
             </div>
         </div>
     </div>
@@ -174,7 +171,7 @@
 
 .button-animated {
     letter-spacing: -.03em;
-    transition: color .2s cubic-bezier(.165,.84,.44,1);
+    transition: color .2s cubic-bezier(.165, .84, .44, 1);
 }
 
 .button-hover-background {
@@ -228,6 +225,7 @@
     font-size: .625em;
     font-weight: 700;
 }
+
 h6 {
     margin-top: 0;
     margin-bottom: 0;
@@ -275,8 +273,9 @@ h6 {
     .button-animated {
         font-size: 1em;
     }
-    
-    .footer-1-main-grid, .contact-list {
+
+    .footer-1-main-grid,
+    .contact-list {
         grid-template-columns: 1fr;
     }
 
@@ -284,6 +283,7 @@ h6 {
         grid-column-gap: 1em;
         grid-row-gap: 2em;
     }
+
     .footer-row-base.column-mobile {
         grid-auto-flow: row;
     }

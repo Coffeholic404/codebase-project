@@ -1,6 +1,8 @@
 <script setup>
 import { Icon } from "@iconify/vue";
 
+const isNavbarOpen = ref(false);
+
 // Function to handle scroll event
 const handleScroll = () => {
     const navbar = document.querySelector('.navbar');
@@ -22,49 +24,40 @@ onMounted(() => {
 onUnmounted(() => {
     window.removeEventListener('scroll', handleScroll);
 });
+
+const toggleNavbar = () => {
+    isNavbarOpen.value = !isNavbarOpen.value;
+};
 </script>
 
 <template>
-    <div class="w-full fixed flex items-center justify-center z-[1001] pt-6">
-        <div class="navbar w-full max-w-[64em] px-5 mx-auto h-[60px]">
+    <div :class="{'navbarmobile': isNavbarOpen, 'w-full': true, 'fixed': true, 'flex': true, 'items-center': true, 'justify-center': true, 'z-[1001]': true, 'pt-6': true}">
+        <div class="navbar  w-full max-w-[64em] px-5 mx-auto h-[60px]">
             <div class="navlogo max-w-full w-[100px]">
                 <img src="/assets/imgs/logo_white.svg" alt="">
             </div>
             <ul class="navlist text-sm font-medium text-titles-links cursor-pointer">
                 <li>
-                    <p popovertarget="support_modal">Support</p>
+                    <p>Support</p>
                 </li>
-                <li class=" relative">
-                    <p class=" relative">Product</p>
+                <li class="pad-top">
+                    <p >Product</p>
                 </li>
-                <li>
+                <li class="pad-top">
                     <p>Company</p>
                 </li>
-                <li>
+                <li class="pad-top">
                     <p>Account</p>
                 </li>
             </ul>
             <div class="navbtn">
                 <button class="navbtn__logo text-xs text-white bg-primary py-[9px] px-[15px] rounded-2xl">Buy
                     template</button>
-                <Icon icon="tabler:menu" class="menu" />
+                <Icon icon="tabler:menu" class="menu"  v-show="!isNavbarOpen" @click="toggleNavbar"/>
+                <Icon icon="material-symbols:close" v-show="isNavbarOpen" @click="toggleNavbar"/>
             </div>
         </div>
 
-        <div popover id="support_modal">
-            <div class="modal">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h2>Support</h2>
-                        <span class="close">&times;</span>
-                    </div>
-                    <div class="modal-body">
-                        <p>Some text in the Modal Body</p>
-                        <p>Some other text...</p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </template>
 
@@ -99,6 +92,19 @@ onUnmounted(() => {
     grid-column: 3/4;
 }
 
+.navbarmobile {
+    min-width: 200px;
+    /* position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0; */
+    overflow: visible;
+    display: block !important;
+    background-color: var(--neutral-700);
+    height: 64%;
+    padding-top: 6em;
+}
+
 @media (max-width: 479px) {
     .navbar.scrolled{
         margin-inline: 1em;
@@ -107,6 +113,46 @@ onUnmounted(() => {
     .navbar.scrolled {
         display: sticky;
         top: 0;
+    }
+
+    /* .navbar-mobile .navlist {
+        display: block !important;
+    } */
+
+    .navbarmobile .navbar {
+        display: grid;
+        grid-template-columns: 1fr .8fr;
+        grid-template-rows: auto;
+        gap: 2em;
+        justify-content: center;
+        height: 60%;
+        margin: 0;
+    }
+
+    .navbarmobile .navlogo {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    .navbarmobile .navlist {
+        grid-column: 1/2;
+        grid-row: 2/3;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2em;
+        padding-top: .5em;
+        padding-inline: 1em ;
+        /* font-size: 14px;
+        font-weight: 500; */
+    }
+    .navbarmobile .navlist li p {
+        font-size: 14px;
+        font-weight: 500;
+        /* letter-spacing: .03em; */
+    }
+    .navbarmobile .navlist .pad-top{
+        margin-top: 2em;
     }
 }
 

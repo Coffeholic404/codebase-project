@@ -114,17 +114,18 @@ import { Icon } from "@iconify/vue";
           class="image-bg-cover opacity-[.15] z-[5] w-full max-w-full h-full object-cover absolute top-0 bottom-0 right-0 left-0 align-middle inline-block rounded-[.5em]">
 
 
-        <div class="w-layout-grid column-md content-centered banner-content-centered w-full text-center mx-auto items-center relative z-[5]" >
+        <div
+          class="w-layout-grid column-md content-centered banner-content-centered w-full text-center mx-auto items-center relative z-[5]">
           <div class="banner-max-width-lg">
             <div class="content-left text-left">
-              <div class="banner-title-xs  text-white z-[5] font-extrabold leading-[1.1] relative">“Best templates and support out there! They are always happy to
+              <div class="banner-title-xs  text-white z-[5] font-extrabold leading-[1.1] relative">“Best templates and
+                support out there! They are always happy to
                 help with any issues you may be having”</div>
 
               <div class="banner-margin-vertical margin-2xl mx-0 my-[2em]">
                 <div class="banner-row-sm">
-                  <img
-                    src="/assets/imgs/stack_overflow.svg"
-                    loading="lazy" alt="" class="client-logo-base align-middle inline-block">
+                  <img src="/assets/imgs/stack_overflow.svg" loading="lazy" alt=""
+                    class="client-logo-base align-middle inline-block">
                   <div class="banner-text-sm text-white relative">
                     <div>George Light</div>
                     <div>Business Director, Stack</div>
@@ -136,7 +137,9 @@ import { Icon } from "@iconify/vue";
                 <div class="banner-content-left flex flex-col text-left relative">
                   <div class="banner-row-sm items-center">
                     <div class="banner-text-xl">
-                      <div class="material-icons"><Icon icon="material-symbols:data-exploration" /></div>
+                      <div class="material-icons">
+                        <Icon icon="material-symbols:data-exploration" />
+                      </div>
                     </div>
                     <h5>73%</h5>
                   </div>
@@ -145,7 +148,9 @@ import { Icon } from "@iconify/vue";
                 <div class="banner-content-left flex flex-col text-left relative">
                   <div class="banner-row-sm items-center">
                     <div class="banner-text-xl">
-                      <div class="material-icons"><Icon icon="material-symbols:verified" /></div>
+                      <div class="material-icons">
+                        <Icon icon="material-symbols:verified" />
+                      </div>
                     </div>
                     <h5>73%</h5>
                   </div>
@@ -176,7 +181,7 @@ import { Icon } from "@iconify/vue";
   </article>
 
   <article class="feature3-wrapper w-full min-h-[100dvh] py-[5em] bg-amber-900">
-      <FeatureThree />
+    <FeatureThree />
   </article>
 
   <article class="w-full relative">
@@ -191,14 +196,11 @@ import { Icon } from "@iconify/vue";
     <ProcessSteps />
   </article>
 
-  <footer class="z-[10] w-full bg-background text-background mt-[4em] pb-[2em] relative">
-    <Footer />
-  </footer>
+  <Footer />
 </template>
 
 <style scoped>
-
-.nav__wrapper{
+.nav__wrapper {
   position: sticky;
   top: 0;
   right: 0;
@@ -213,12 +215,12 @@ import { Icon } from "@iconify/vue";
   top: 0;
   left: 0;
   /* min-height: 100dvh; */
-  background-image: radial-gradient(circle farthest-corner at -25% -50%, var(--background) 36%, rgba(13, 17, 23, 0) 48%), 
-  radial-gradient(circle farthest-corner at -25% 150%, var(--background) 45%, rgba(13, 17, 23, 0) 89%), 
-  radial-gradient(circle farthest-corner at -25% -100%, rgba(13, 17, 23, 0) 55%, rgba(13, 17, 23, .28) 65%, rgba(13, 17, 23, 0) 68%), 
-  radial-gradient(circle farthest-corner at -33% -75%, #1f00cc 48%, rgba(131, 5, 49, 0) 56%), 
-  radial-gradient(circle farthest-side at 0% -50%, rgba(13, 17, 23, 0) 64%, rgba(1, 2, 36, .4) 69%, rgba(13, 17, 23, 0) 81%), 
-  radial-gradient(circle farthest-corner at 0% -50%, rgba(13, 17, 23, 0) 33%, #010c5f 51%, rgba(13, 17, 23, 0) 72%);
+  background-image: radial-gradient(circle farthest-corner at -25% -50%, var(--background) 36%, rgba(13, 17, 23, 0) 48%),
+    radial-gradient(circle farthest-corner at -25% 150%, var(--background) 45%, rgba(13, 17, 23, 0) 89%),
+    radial-gradient(circle farthest-corner at -25% -100%, rgba(13, 17, 23, 0) 55%, rgba(13, 17, 23, .28) 65%, rgba(13, 17, 23, 0) 68%),
+    radial-gradient(circle farthest-corner at -33% -75%, #1f00cc 48%, rgba(131, 5, 49, 0) 56%),
+    radial-gradient(circle farthest-side at 0% -50%, rgba(13, 17, 23, 0) 64%, rgba(1, 2, 36, .4) 69%, rgba(13, 17, 23, 0) 81%),
+    radial-gradient(circle farthest-corner at 0% -50%, rgba(13, 17, 23, 0) 33%, #010c5f 51%, rgba(13, 17, 23, 0) 72%);
   border-radius: 1px;
 }
 
@@ -269,59 +271,62 @@ import { Icon } from "@iconify/vue";
   font-weight: 600;
   line-height: 1.2;
 }
+
 .button {
   line-height: 1;
   transition: background-color .3s, opacity .3s, box-shadow .3s, color .3s;
-  
+
 }
 
 .button:hover {
   box-shadow: inset 0 0 200px 200px rgba(0, 0, 0, .15);
 }
-.sigh__wrapper{
-    grid-column-gap: 1em;
-    grid-row-gap: 1em;
-    grid-template-rows: auto;
-    grid-template-columns: 1fr;
-    grid-auto-columns: 1fr;
-    display: grid;
-    /* position: relative; */
+
+.sigh__wrapper {
+  grid-column-gap: 1em;
+  grid-row-gap: 1em;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  grid-auto-columns: 1fr;
+  display: grid;
+  /* position: relative; */
 }
 
-.input{
-    padding: 0 1.125em 0 3em;
-    font-size: 80%;
-    font-weight: 400;
-    line-height: 1;
-    transition: background-color .25s, box-shadow .25s;
+.input {
+  padding: 0 1.125em 0 3em;
+  font-size: 80%;
+  font-weight: 400;
+  line-height: 1;
+  transition: background-color .25s, box-shadow .25s;
 
-    box-shadow: inset 0 0 0 1px transparent;
+  box-shadow: inset 0 0 0 1px transparent;
 }
 
 .input__email {
   border-top-left-radius: .5em;
-    border-top-right-radius: .5em;
+  border-top-right-radius: .5em;
 }
 
 .input__password {
   border-bottom-left-radius: .5em;
-    border-bottom-right-radius: .5em;
+  border-bottom-right-radius: .5em;
 }
+
 .caption {
   letter-spacing: .1em;
-    text-transform: uppercase;
-    font-size: .625em;
-    font-weight: 600;
+  text-transform: uppercase;
+  font-size: .625em;
+  font-weight: 600;
 }
 
 .side-by-side-list {
-    display: grid;
-    z-index: 5;
-    grid-column-gap: 5em;
-    grid-row-gap: 5em;
-    grid-template-rows: auto;
-    grid-template-columns: 1fr;
-    position: relative;
+  display: grid;
+  z-index: 5;
+  grid-column-gap: 5em;
+  grid-row-gap: 5em;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  position: relative;
 }
 
 /* .banner{
@@ -332,14 +337,14 @@ import { Icon } from "@iconify/vue";
 } */
 
 .container-md {
-    z-index: 5;
-    width: 100%;
-    max-width: 56em;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1.25em;
-    padding-right: 1.25em;
-    position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 56em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+  position: relative;
 }
 
 /* .image-background {
@@ -379,144 +384,145 @@ import { Icon } from "@iconify/vue";
 } */
 
 .column-md.content-centered {
-    grid-column-gap: 1.5em;
-    grid-row-gap: 1.5em;
-    grid-template-rows: auto;
-    grid-template-columns: 1fr;
-    grid-auto-columns: 1fr;
-    justify-items: center;
-    display: grid;
+  grid-column-gap: 1.5em;
+  grid-row-gap: 1.5em;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  grid-auto-columns: 1fr;
+  justify-items: center;
+  display: grid;
 }
+
 .content-centered {
-    width: 100%;
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    position: relative;
+  width: 100%;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  position: relative;
 }
 
 .column-md {
-    grid-column-gap: 1.5em;
-    grid-row-gap: 1.5em;
-    grid-template-rows: auto;
-    grid-template-columns: 1fr;
-    grid-auto-columns: 1fr;
-    justify-items: start;
-    display: grid;
+  grid-column-gap: 1.5em;
+  grid-row-gap: 1.5em;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  grid-auto-columns: 1fr;
+  justify-items: start;
+  display: grid;
 }
 
 .w-layout-grid {
-    grid-row-gap: 16px;
-    grid-column-gap: 16px;
-    grid-template-rows: auto auto;
-    grid-template-columns: 1fr 1fr;
-    grid-auto-columns: 1fr;
-    display: grid;
+  grid-row-gap: 16px;
+  grid-column-gap: 16px;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-columns: 1fr;
+  display: grid;
 }
 
 .row-sm {
-    grid-column-gap: .5em;
-    grid-row-gap: .5em;
-    grid-template-rows: auto;
-    grid-template-columns: auto;
-    grid-auto-columns: auto;
-    grid-auto-flow: column;
-    justify-content: start;
-    display: grid;
+  grid-column-gap: .5em;
+  grid-row-gap: .5em;
+  grid-template-rows: auto;
+  grid-template-columns: auto;
+  grid-auto-columns: auto;
+  grid-auto-flow: column;
+  justify-content: start;
+  display: grid;
 }
 
 .stats-3-column-sm {
-    grid-column-gap: 1em;
-    grid-row-gap: 1em;
-    grid-template-rows: auto;
-    grid-template-columns: auto auto auto;
+  grid-column-gap: 1em;
+  grid-row-gap: 1em;
+  grid-template-rows: auto;
+  grid-template-columns: auto auto auto;
 }
 
 .material-icons {
-    text-transform: none;
-    font-family: ICONS FILLED, sans-serif;
+  text-transform: none;
+  font-family: ICONS FILLED, sans-serif;
 }
 
 h5 {
-    letter-spacing: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 1.25em;
-    font-weight: 700;
-    line-height: 1.2;
+  letter-spacing: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.25em;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .banner-content-centered {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    justify-content: center;
-    align-items: center;
-    grid-auto-columns: 1fr;
-    gap: 1.5em;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  justify-content: center;
+  align-items: center;
+  grid-auto-columns: 1fr;
+  gap: 1.5em;
 }
 
 .banner-max-width-lg {
-    grid-area: span 1 / span 1 / span 1 / span 1;
-    width: 100%;
-    max-width: 32em;
+  grid-area: span 1 / span 1 / span 1 / span 1;
+  width: 100%;
+  max-width: 32em;
 }
 
 .content-left {
-    text-align: left;
-    flex-direction: column;
-    align-items: flex-start;
-    display: flex;
+  text-align: left;
+  flex-direction: column;
+  align-items: flex-start;
+  display: flex;
 }
 
 .banner-title-xs {
-    font-size: 2.5em;
-    letter-spacing: -.03em;
+  font-size: 2.5em;
+  letter-spacing: -.03em;
 }
 
 .banner-row-sm {
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: auto;
-    grid-auto-columns: auto;
-    grid-auto-flow: column;
-    justify-content: start;
-    gap: .5em;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto;
+  grid-auto-columns: auto;
+  grid-auto-flow: column;
+  justify-content: start;
+  gap: .5em;
 }
 
 .client-logo-base {
-    height: 2em;
-    max-width: 6em;
+  height: 2em;
+  max-width: 6em;
 }
 
 .banner-text-sm {
-    line-height: 1;
-    letter-spacing: -.005em;
-    font-size: .875em;
+  line-height: 1;
+  letter-spacing: -.005em;
+  font-size: .875em;
 }
 
 .banner-stats-3 {
-    display: grid;
-    grid-column-gap: 1em;
-    grid-row-gap: 1em;
-    grid-template-rows: auto;
-    grid-template-columns: auto auto auto;
-    grid-auto-columns: 1fr;
+  display: grid;
+  grid-column-gap: 1em;
+  grid-row-gap: 1em;
+  grid-template-rows: auto;
+  grid-template-columns: auto auto auto;
+  grid-auto-columns: 1fr;
 }
 
 .banner-text-xl {
-    letter-spacing: -.01em;
-    font-size: 1.5em;
+  letter-spacing: -.01em;
+  font-size: 1.5em;
 }
 
 .feature3-wrapper {
   background-image: linear-gradient(to top, var(--background), rgba(13, 17, 23, 0) 15%), linear-gradient(to bottom, var(--background), rgba(13, 17, 23, 0) 15%), radial-gradient(circle farthest-side at 50% 0%, rgba(13, 17, 23, 0), var(--background)), url(/assets/imgs/bg-tile-dark.svg);
-    background-position: 0 0, 0 0, 0 0, -1px -1px;
-    background-size: auto, auto, auto, 64px;
-    position: relative;
+  background-position: 0 0, 0 0, 0 0, -1px -1px;
+  background-size: auto, auto, auto, 64px;
+  position: relative;
 }
 
 @media (max-width: 479px) {
@@ -525,34 +531,38 @@ h5 {
   }
 
   .title-lg {
-        letter-spacing: -.01em;
-        font-size: 1.875em;
-    }
+    letter-spacing: -.01em;
+    font-size: 1.875em;
+  }
 
   .padding-6xl {
-        padding: 2.5em 1.5em; 
-    }
-    .stats-3-column-sm {
-        width: 100%;
-        grid-column-gap: .5em;
-        grid-row-gap: .5em;
-        grid-template-columns: auto;
-    }
-    .title-xs {
-        font-size: 1.75em ;
-    }
+    padding: 2.5em 1.5em;
+  }
 
-    .banner{
-      padding:1rem;
-    }
-    .banner-title-xs {
+  .stats-3-column-sm {
+    width: 100%;
+    grid-column-gap: .5em;
+    grid-row-gap: .5em;
+    grid-template-columns: auto;
+  }
+
+  .title-xs {
+    font-size: 1.75em;
+  }
+
+  .banner {
+    padding: 1rem;
+  }
+
+  .banner-title-xs {
     font-size: 1.75em !important;
   }
+
   .banner-margin-vertical {
     margin: 1.625em 0 !important;
   }
 
-  .banner-stats-3{
+  .banner-stats-3 {
     width: 100%;
     gap: .5em;
     grid-template-columns: auto;
@@ -561,31 +571,29 @@ h5 {
 
 @media (max-width: 767px) {
   .padding-6xl {
-        padding: 3em; 
-    }
+    padding: 3em;
+  }
 
-    .banner-title-xs {
+  .banner-title-xs {
     font-size: 2.125em;
   }
 
-  .banner-margin-vertical{
+  .banner-margin-vertical {
     margin: 1.75em 0;
-  } 
+  }
 }
 
 @media (max-width: 991px) {
   .padding-6xl {
-        padding: 3.5em; 
-    }
+    padding: 3.5em;
+  }
 
-    .banner-title-xs {
+  .banner-title-xs {
     font-size: 2.25em;
   }
 
-  .banner-margin-vertical{
+  .banner-margin-vertical {
     margin: 1.875em 0;
-  } 
+  }
 }
-
-
 </style>
