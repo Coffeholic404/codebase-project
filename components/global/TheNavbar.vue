@@ -103,6 +103,7 @@ const toggleNavbar = () => {
     background-color: var(--neutral-700);
     height: 64%;
     padding-top: 6em;
+    transition: all 0.3s ease;
 }
 
 @media (max-width: 479px) {
