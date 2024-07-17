@@ -74,7 +74,7 @@ onMounted(() => {
           end: 'bottom 50%',
           scrub: false,
           markers: false,
-          toggleActions: 'play none none none',
+          toggleActions: 'restart none none none',
         },
       });
   });
