@@ -1,12 +1,91 @@
 <script setup>
 import { Icon } from "@iconify/vue";
+
+  const { $gsap } = useNuxtApp();
+  const card1 = ref(null);
+  const card2 = ref(null);
+  const card3 = ref(null);
+
+  const one = ref(null);
+  const two = ref(null);
+  const three = ref(null);
+  const four = ref(null);
+  const five = ref(null);
+  const six = ref(null);
+  const seven = ref(null);
+  const eight = ref(null);
+  const nine = ref(null);
+  const ten = ref(null);
+
+  const img = ref(null);
+  
+
+
+onMounted(() => {
+  const cards = [card1, card2, card3];
+  cards.forEach((card, index) => {
+    $gsap.fromTo(card.value, 
+      { opacity: 0, y: 50 }, 
+      { 
+        opacity: 1, 
+        y: 0,
+        duration: 1,
+        delay: index * 0.5, // Different delay for each card
+        scrollTrigger: {
+          trigger: card.value,
+          start: 'top 80%', // Adjust based on when you want the animation to start
+          end: 'bottom 50%',
+          scrub: false,
+          markers: false,
+          toggleActions: 'restart none none none',
+        },
+      });
+  });
+
+  $gsap.fromTo(img.value, 
+    { opacity: 0, x: 0}, 
+    { 
+      opacity: 1, 
+      x: 992,
+      delay:3,
+      scrollTrigger: {
+        trigger: img.value,
+        start: 'top 80%', // Adjust based on when you want the animation to start
+        end: 'top 50%',
+        scrub: true,
+        toggleActions: 'play none none none',
+      },
+    });
+});
+onMounted(() => {
+  const cards = [one, two, three, four, five, six, seven, eight, nine, ten ];
+  cards.forEach((card, index) => {
+    $gsap.fromTo(card.value, 
+      { opacity: 0, y: 50 }, 
+      { 
+        opacity: 1, 
+        y: 0,
+        duration: 1,
+        delay: index * 0.2, // Different delay for each card
+        scrollTrigger: {
+          trigger: card.value,
+          start: 'top 80%', // Adjust based on when you want the animation to start
+          end: 'bottom 50%',
+          scrub: false,
+          markers: false,
+          toggleActions: 'play none none none',
+        },
+      });
+  });
+});
 </script>
 
 <template>
     <div class="side-by-side mx-auto px-[1.25em]">
         <!-- left-side -->
         <div
-            class="right-side image-wrapper-3-4 rounded-xs fade-in-on-scroll w-full bg-accent pt-[124%] relative overflow-hidden rounded-[.5em]">
+        ref="img"
+            class="animation2 right-side image-wrapper-3-4 rounded-xs fade-in-on-scroll w-full bg-accent pt-[124%] relative overflow-hidden rounded-[.5em] -left-[62rem]">
             <img src="https://assets-global.website-files.com/6239c2cd52949d0f76a8f421/6239c2ce52949d3e4ca8f66e_Rectangle-9.jpg"
                 loading="lazy"
                 srcset="https://assets-global.website-files.com/6239c2cd52949d0f76a8f421/6239c2ce52949d3e4ca8f66e_Rectangle-9-p-500.jpeg 500w, https://assets-global.website-files.com/6239c2cd52949d0f76a8f421/6239c2ce52949d3e4ca8f66e_Rectangle-9-p-800.jpeg 800w, https://assets-global.website-files.com/6239c2cd52949d0f76a8f421/6239c2ce52949d3e4ca8f66e_Rectangle-9.jpg 1024w"
@@ -34,12 +113,12 @@ import { Icon } from "@iconify/vue";
                 class="image-bg-contain feature-img   filter-none object-cover max-w-full rounded-[.5em] align-middle inline-block">
         </div> -->
         <!-- right side -->
-        <div class="rightside">
+        <div class=" rightside">
             <div class="feature margin-bottom margin-2xl mb-[2em]  max-w-[40em]">
                 <div class="feature__wrapper max-width-xl w-full ">
                     <div class="margin-bottom margin-xl mb-[1.75em]">
-                        <div class="feature-layout-grid caption-holder z-[5] w-full">
-                            <div class="w-layout-grid feature-row-sm">
+                        <div ref="card1" class="feature-layout-grid caption-holder z-[5] w-full">
+                            <div class="animation w-layout-grid feature-row-sm">
                                 <div class="caption tracking-[.1em] uppercase text-[.625em] font-semibold">Feature ·
                                 </div>
                                 <div class="tracking-[.1em] uppercase text-[.625em] font-semibold opacity-[.5]">01</div>
@@ -49,7 +128,7 @@ import { Icon } from "@iconify/vue";
                             </div>
                         </div>
                     </div>
-                    <div class="w-layout-grid feature-row-md">
+                    <div ref="card2"class="animation w-layout-grid feature-row-md">
                         <div
                             class="section-icon w-[2.75em] h-[2.75em] text-indigo-200 text-center rounded-full flex flex-col items-center justify-center">
                             <Icon icon="material-symbols:fingerprint" class=" text-indigo-200" />
@@ -67,11 +146,11 @@ import { Icon } from "@iconify/vue";
                         </div>
                     </div>
                 </div>
-                <div class="w-layout-grid column-base mt-4">
-                    <div class="line-holder">
+                <div class="animation w-layout-grid column-base mt-4">
+                    <div ref="one" class="line-holder">
                         <div class="line-animated"></div>
                     </div>
-                    <div class="w-layout-grid feature-row fade-in-on-scroll">
+                    <div ref="two" class="w-layout-grid feature-row fade-in-on-scroll">
                         <div class="text-sm">Add and edit schema
                             markup</div>
                         <div class="text-sm text-sm-icon">
@@ -80,30 +159,30 @@ import { Icon } from "@iconify/vue";
                             </div>
                         </div>
                     </div>
-                    <div class="line-holder">
+                    <div ref="three" class="line-holder">
                         <div class="line-animated"></div>
                     </div>
-                    <div class="w-layout-grid feature-row fade-in-on-scroll">
+                    <div ref="four" class="w-layout-grid feature-row fade-in-on-scroll">
                         <div class="text-sm">Meta titles and meta
                             descriptions<br></div>
                         <div class="text-sm text-sm-icon">
                             <div>Unlimited</div>
                         </div>
                     </div>
-                    <div class="line-holder">
+                    <div ref="five" class="line-holder">
                         <div class="line-animated"></div>
                     </div>
-                    <div class="w-layout-grid feature-row fade-in-on-scroll">
+                    <div ref="six" class="w-layout-grid feature-row fade-in-on-scroll">
                         <div class="text-sm">Indexing and sitemap
                             controls<br></div>
                         <div class="text-sm text-sm-icon">
                             <div>Easy edit</div>
                         </div>
                     </div>
-                    <div class="line-holder">
+                    <div ref="seven" class="line-holder">
                         <div class="line-animated"></div>
                     </div>
-                    <div class="w-layout-grid feature-row fade-in-on-scroll">
+                    <div ref="eight" class="w-layout-grid feature-row fade-in-on-scroll">
                         <div class="text-sm">Robust 301 redirects
                             management<br></div>
                         <div class="text-sm text-sm-icon">
@@ -112,10 +191,10 @@ import { Icon } from "@iconify/vue";
                             </div>
                         </div>
                     </div>
-                    <div class="line-holder">
+                    <div ref="nine" class="line-holder">
                         <div class="line-animated"></div>
                     </div>
-                    <div class="w-layout-grid feature-row fade-in-on-scroll">
+                    <div ref="ten" class="w-layout-grid feature-row fade-in-on-scroll">
                         <div class="text-sm">Simple image alt tag
                             editing<br></div>
                         <div class="text-sm text-sm-icon">
@@ -359,4 +438,36 @@ img {
     display: grid;
     position: relative;
 }
+
+
+/* @keyframes slide-fade-in {
+    from {
+        opacity: 0;
+        transform: translateX(5vh);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .animation {
+        view-timeline-name: --item-timeline;
+        animation: slide-fade-in both;
+        animation-timeline: --item-timeline;
+        animation-range: contain 0% contain 50%;
+    }
+} 
+@keyframes slide-fade-in2 {
+    from {
+        opacity: 0;
+        transform: translateY(5vh);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .animation2 {
+        view-timeline-name: --item-timeline;
+        animation: slide-fade-in both;
+        animation-timeline: --item-timeline;
+        animation-range: contain 0% contain 50%;
+    }
+}  */
 </style>

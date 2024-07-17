@@ -22,18 +22,6 @@
                 <UICards />
             </div>
         </div>
-        <!-- <div class=" mt-10">
-            <div class=" bg-neutral-800 w-[300px] h-[360px] rounded-lg mx-auto p-5">
-                <h4>01.</h4>
-                <div class=" w-[212px] h-[96px] bg-text rounded-md mx-auto"></div>
-                <div>
-                    <h5>Speed</h5>
-                    <p>
-                        100+ datacenters worldwide means your site loads fast for every visitor.
-                    </p>
-                </div>
-            </div>
-        </div> -->
     </div>
 </template>
 

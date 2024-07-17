@@ -1,9 +1,40 @@
 <script setup>
 import { Icon } from "@iconify/vue";
+
+import { onMounted, ref } from 'vue';
+  const { $gsap } = useNuxtApp();
+  const card1 = ref(null);
+  const card2 = ref(null);
+  const card3 = ref(null);
+  
+
+
+onMounted(() => {
+  const cards = [card1, card2, card3];
+  cards.forEach((card, index) => {
+    $gsap.fromTo(card.value, 
+      { opacity: 0, y: 50 }, 
+      { 
+        opacity: 1, 
+        y: 0,
+        duration: 1,
+        delay: index * 0.5, // Different delay for each card
+        scrollTrigger: {
+          trigger: card.value,
+          start: 'top 80%', // Adjust based on when you want the animation to start
+          end: 'bottom 50%',
+          scrub: false,
+          markers: false,
+          toggleActions: 'restart none none none',
+        },
+      });
+  });
+});
+
 </script>
 
 <template>
-<div class=" card-wrapper mt-10">
+<div ref="card1" class="animation card-1 card-wrapper mt-10">
             <div class="card-body bg-neutral-800 w-[330px] h-[360px] rounded-lg mx-auto p-5">
                 <h4 class="card-body__heading text-titles-links tracking-[-.025em] text-[1.5em] font-bold leading-[1.2]">01.</h4>
                 <div class=" bg-neutral-800 rounded-[.5em] overflow-hidden">
@@ -106,7 +137,7 @@ import { Icon } from "@iconify/vue";
             </div>
         </div>
 
-        <div class="card-wrapper mt-10">
+        <div ref="card2" class="animation card-2  card-wrapper mt-10">
             <div class="card-body bg-neutral-800 w-[330px] h-[360px] rounded-lg mx-auto p-5">
                 <h4 class="card-body__heading text-titles-links tracking-[-.025em] text-[1.5em] font-bold leading-[1.2]">02.</h4>
                 <div class=" bg-neutral-800 rounded-[.5em] overflow-hidden">
@@ -143,8 +174,8 @@ import { Icon } from "@iconify/vue";
             </div>
         </div>
 
-        <div class=" slack-wrapper mt-10">
-            <div class="card-body bg-neutral-800 w-[330px] h-[360px] rounded-lg mx-auto p-5">
+        <div  class=" slack-wrapper mt-10">
+            <div ref="card3" class="animation card-3 card-body bg-neutral-800 w-[330px] h-[360px] rounded-lg mx-auto p-5">
                 <h4 class="card-body__heading text-titles-links tracking-[-.025em] text-[1.5em] font-bold leading-[1.2]">03.</h4>
                 <div class=" bg-neutral-800 rounded-[.5em] overflow-hidden ">
                     <div class=" w-[85%]  h-[96px]   rounded-md mx-auto my-[2.75em] ">
@@ -319,4 +350,38 @@ import { Icon } from "@iconify/vue";
 .snippit-switch .snippit-switch-text {
     justify-self: start;
 }
+
+
+.image-bg-cover {
+    filter: grayscale();
+    mix-blend-mode: multiply;
+}
+
+/* @keyframes slide-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(5vh);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .card-1 {
+        view-timeline-name: --item-timeline;
+        animation: slide-fade-in 0s both;
+        animation-timeline: --item-timeline;
+        animation-range: contain 0% contain 50%;
+    }
+    .card-2 {
+        view-timeline-name: --item-timeline;
+        animation: slide-fade-in 1s both;
+        animation-timeline: --item-timeline;
+        animation-range: contain 0% contain 50%;
+    }
+    .card-3 {
+        view-timeline-name: --item-timeline;
+        animation: slide-fade-in 2.5s both;
+        animation-timeline: --item-timeline;
+        animation-range: contain 0% contain 50%;
+    }
+} */
 </style>

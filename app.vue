@@ -9,7 +9,7 @@ import { Icon } from "@iconify/vue";
       <TheNavbar />
     </div>
     <div>
-      <div class="wrapper py-[9em] ">
+      <div class=" wrapper py-[9em] ">
         <div class="w-full py-[5em] h-full wrapper__continer">
           <div class="w-full max-w-[48em] mx-auto px-[1.25em]">
             <div class="">
@@ -77,7 +77,7 @@ import { Icon } from "@iconify/vue";
       </div>
 
     </div>
-    <div class=" bg-hero-pattern  w-full min-h-[100dvh]">
+    <div class=" bg-hero-pattern  w-full min-h-[100dvh]" id="seo">
       <TheSeo />
     </div>
   </div>
@@ -90,7 +90,7 @@ import { Icon } from "@iconify/vue";
         srcset="https://assets-global.website-files.com/6239c2cd52949d0f76a8f421/6239c2ce52949d7639a8f711_bg-shape-08-p-500.png 500w, https://assets-global.website-files.com/6239c2cd52949d0f76a8f421/6239c2ce52949d7639a8f711_bg-shape-08-p-800.png 800w, https://assets-global.website-files.com/6239c2cd52949d0f76a8f421/6239c2ce52949d7639a8f711_bg-shape-08-p-1080.png 1080w, https://assets-global.website-files.com/6239c2cd52949d0f76a8f421/6239c2ce52949d7639a8f711_bg-shape-08-p-1600.png 1600w, https://assets-global.website-files.com/6239c2cd52949d0f76a8f421/6239c2ce52949d7639a8f711_bg-shape-08-p-2000.png 2000w, https://assets-global.website-files.com/6239c2cd52949d0f76a8f421/6239c2ce52949d7639a8f711_bg-shape-08-p-2600.png 2600w, https://assets-global.website-files.com/6239c2cd52949d0f76a8f421/6239c2ce52949d7639a8f711_bg-shape-08.png 3200w"
         alt="" sizes="100vw" class="bg-pattern-image">
     </div>
-    <div class="sec-wrapper z-[5] w-full max-w-[64em] mx-auto px-[1.25em] relative">
+    <div class="sec-wrapper z-[5] w-full max-w-[64em] mx-auto px-[1.25em] relative" id="feature">
       <div class="side-by-side-list w-full max-w-[]">
         <Feature />
         <Feature2 />
@@ -98,7 +98,7 @@ import { Icon } from "@iconify/vue";
     </div>
   </article>
 
-  <article class="banner-section min-h-[100dvh] py-[10em] rounded-[.5em] bg-teal-700 w-full">
+  <article class=" banner-section min-h-[100dvh] py-[10em] rounded-[.5em] bg-teal-700 w-full" id="banner">
     <div class="banner-card-wrapper w-full max-w-[56em]   px-[1.25em] mx-auto rounded-[.5em] z-[10000]">
       <div class="banner-card relative rounded-[.5em]  p-[4em]">
         <img
@@ -180,11 +180,11 @@ import { Icon } from "@iconify/vue";
     <FeatureTwo />
   </article>
 
-  <article class="feature3-wrapper w-full min-h-[100dvh] py-[5em] bg-amber-900">
+  <article class=" feature3-wrapper w-full min-h-[100dvh] py-[5em] bg-amber-900" id="managment">
     <FeatureThree />
   </article>
 
-  <article class="w-full relative">
+  <article class=" w-full relative">
     <TechStartups />
   </article>
 
@@ -195,6 +195,8 @@ import { Icon } from "@iconify/vue";
   <article class=" z-[5] w-full max-w-[48em] mx-auto px-[1.25em] relative">
     <ProcessSteps />
   </article>
+
+  <!-- <TheScroll /> -->
 
   <Footer />
 </template>

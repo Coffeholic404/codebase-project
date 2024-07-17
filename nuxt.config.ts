@@ -9,6 +9,10 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  plugins: [
+    { src: '~/plugins/gsap.client.js', mode: 'client' },
+  ],
 
   modules: ['nuxt-icon'],
+  ssr: false,
 })

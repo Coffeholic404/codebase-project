@@ -53,16 +53,16 @@ const toggleNavbar = () => {
       </div>
       <ul class="navlist text-sm font-medium text-titles-links cursor-pointer">
         <li>
-          <a>Support</a>
+          <a href="#seo">Support</a>
         </li>
         <li class="pad-top">
-          <a>Product</a>
+          <a href="#feature">Product</a>
         </li>
         <li class="pad-top">
-          <a>Company</a>
+          <a href="#banner">Company</a>
         </li>
         <li class="pad-top">
-          <a>Account</a>
+          <a href="#managment">Account</a>
         </li>
       </ul>
       <div class="navbtn">
@@ -123,6 +123,10 @@ const toggleNavbar = () => {
   height: 64%;
   padding-top: 6em;
   transition: all 0.3s ease;
+}
+
+.navbarmobile .navlist li a {
+    scroll-behavior: smooth;
 }
 
 @media (max-width: 479px) {

@@ -1,5 +1,85 @@
 <script setup>
 import { Icon } from "@iconify/vue";
+const { $gsap } = useNuxtApp();
+const feat = ref(null);
+const feat2 = ref(null);
+const img = ref(null);
+
+const one = ref(null);
+  const two = ref(null);
+  const three = ref(null);
+  const four = ref(null);
+  const five = ref(null);
+
+onMounted(() => {
+    $gsap.fromTo(feat.value, 
+    { opacity: 0, x: 0}, 
+    { 
+      opacity: 1, 
+      x: 992,
+      delay:3,
+      ease: 'power2.inOut',
+      scrollTrigger: {
+        trigger: feat.value,
+        start: 'top 80%', // Adjust based on when you want the animation to start
+        end: 'top 50%',
+        scrub: true,
+        toggleActions: 'restart none none none',
+      },
+    });
+
+    $gsap.fromTo(feat2.value, 
+    { opacity: 0, x: 0}, 
+    { 
+      opacity: 1, 
+      x: 992,
+      delay:4,
+      ease: 'power2.inOut',
+      scrollTrigger: {
+        trigger: feat2.value,
+        start: 'top 80%', // Adjust based on when you want the animation to start
+        end: 'top 50%',
+        scrub: true,
+        toggleActions: 'restart none none none',
+      },
+    });
+
+    $gsap.fromTo(img.value, 
+    { opacity: 0, y: 60 }, 
+    { 
+      opacity: 1, 
+      y: 0,
+      delay:3,
+      ease: 'power2.inOut',
+      scrollTrigger: {
+        trigger: img.value,
+        start: 'top 90%', // Adjust based on when you want the animation to start
+        end: 'top 50%',
+        toggleActions: 'restart none none none',
+      },
+    });
+
+
+    const cards = [one, two, three, four, five];
+  cards.forEach((card, index) => {
+    $gsap.fromTo(card.value, 
+      { opacity: 0, y: 50 }, 
+      { 
+        opacity: 1, 
+        y: 0,
+        duration: 1,
+        delay: index * 0.2, // Different delay for each card
+        scrollTrigger: {
+          trigger: card.value,
+          start: 'top 80%', // Adjust based on when you want the animation to start
+          end: 'bottom 50%',
+          scrub: false,
+          markers: false,
+          toggleActions: 'play none none none',
+        },
+      });
+  });
+})
 </script>
 
 <template>
@@ -8,8 +88,8 @@ import { Icon } from "@iconify/vue";
             <div class="margin-bottom margin-2xl mb-[2em]">
                 <div class="max-width-xl w-full max-w-[40em] ">
                     <div class="margin-bottom margin-xl mb-[1.75em]">
-                        <div class="w-layout-grid caption-holder feature-layout-grid">
-                            <div class="w-layout-grid feature-row-sm">
+                        <div ref="feat" class="w-layout-grid caption-holder feature-layout-grid -left-[62rem]">
+                            <div  class="w-layout-grid feature-row-sm ">
                                 <div class="caption">Feature ·</div>
                                 <div class="caption opacity-[.5]">02</div>
                             </div>
@@ -18,7 +98,7 @@ import { Icon } from "@iconify/vue";
                             </div>
                         </div>
                     </div>
-                    <div class="w-layout-grid feature-row-md">
+                    <div ref="feat2" class="w-layout-grid feature-row-md -left-[62rem]">
                         <div class="section-icon-feature2 pink">
                             <Icon icon="material-symbols:fingerprint" />
                         </div>
@@ -38,7 +118,7 @@ import { Icon } from "@iconify/vue";
                 </div>
             </div>
             <div class="w-layout-grid column-base ">
-                <div class="w-layout-grid column-sm fade-in-on-scroll">
+                <div ref="one" class="w-layout-grid column-sm fade-in-on-scroll">
                     <div class="w-layout-grid feature-row-sm  items-center">
                         <div class="square-h4  rounded-[.75em] overflow-hidden size-[1.8em] bg-pink-100 flex flex-col justify-center items-center text-center">
                             <div class="material-icons-outlined">
@@ -51,11 +131,11 @@ import { Icon } from "@iconify/vue";
                     <div id="w-node-e0cda5a5-075d-075a-3efd-657b1d91dd49-968e5ac7" class="text-sm">Add schema markup
                         so your content can be easily understood and represented in search engines.</div>
                 </div>
-                <div  class="line-holder">
+                <div ref="two"  class="line-holder">
                     <div  class="line-animated"
                         ></div>
                 </div>
-                <div class="w-layout-grid column-sm fade-in-on-scroll">
+                <div ref="three" class="w-layout-grid column-sm fade-in-on-scroll">
                     <div class="w-layout-grid feature-row-sm items-center">
                         <div class="square-h4 size-[1.8em] flex flex-col justify-center items-center overflow-hidden rounded-[.75em] bg-pink-100">
                             <div class="material-icons-outlined">
@@ -68,11 +148,11 @@ import { Icon } from "@iconify/vue";
                     <div class="text-sm">Automatically
                         define meta titles and descriptions using fields in your CMS Collections.</div>
                 </div>
-                <div  class="line-holder">
+                <div ref="four"  class="line-holder">
                     <div class="line-animated"
                         ></div>
                 </div>
-                <div class="w-layout-grid column-sm fade-in-on-scroll"
+                <div ref="five" class="w-layout-grid column-sm fade-in-on-scroll"
                     >
                     <div class="w-layout-grid feature-row-sm items-center">
                         <div class="square-h4 size-[1.8em] flex flex-col justify-center items-center overflow-hidden rounded-[.75em] bg-pink-100">
@@ -89,7 +169,8 @@ import { Icon } from "@iconify/vue";
                 </div>
             </div>
         </div>
-        <div 
+        <div
+            ref="img"
             class="feature2-img image-wrapper-3-4 rounded-[.5em] fade-in-on-scroll bg-accent pt-[124%] relative overflow-hidden">
             <img src="https://assets-global.website-files.com/6239c2cd52949d0f76a8f421/6239c2ce52949d107ea8f688_Rectangle-8.jpg"
                 loading="lazy"
@@ -342,4 +423,4 @@ img {
     margin-top: -.05em;
     font-family: ICONS OUTLINED, sans-serif;
 }
-</style>
+</style>import type { Feature } from "#build/components";
