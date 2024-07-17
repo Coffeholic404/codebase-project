@@ -1,11 +1,40 @@
 <script setup>
 import { Icon } from "@iconify/vue";
+const { $gsap } = useNuxtApp();
+
+const one = ref(null);
+  const two = ref(null);
+  const three = ref(null);
+  const four = ref(null);
+  const five = ref(null);
+
+onMounted(()=> {
+    const cards = [one, two, three, four, five];
+  cards.forEach((card, index) => {
+    $gsap.fromTo(card.value, 
+      { opacity: 0, x: 0 }, 
+      { 
+        opacity: 1, 
+        x: 1232,
+        duration: 1,
+        delay: index * 0.2, // Different delay for each card
+        scrollTrigger: {
+          trigger: card.value,
+          start: 'top 80%', // Adjust based on when you want the animation to start
+          end: 'bottom 50%',
+          scrub: false,
+          markers: false,
+          toggleActions: 'play none none none',
+        },
+      });
+  });
+});
 
 </script>
 
 <template>
     <div class="process-steps">
-        <div class="process-steps-step z-[5] w-full flex items-center relative">
+        <div ref="one" class="process-steps-step z-[5] w-full flex items-center relative -left-[77rem]">
             <div class="process-steps-indicator">
                 <div class="process-steps-indicator-icon"><Icon icon="material-symbols:check" /></div>
             </div>
@@ -30,7 +59,8 @@ import { Icon } from "@iconify/vue";
                     sliders, tabs, background videos, and more.<br></div>
             </div>
         </div>
-        <div class="process-steps-step z-[5] w-full flex items-center relative">
+
+        <div ref="two" class="process-steps-step z-[5] w-full flex items-center relative -left-[77rem]">
             <div class="process-steps-indicator">
                 <div class="process-steps-indicator-icon"><Icon icon="material-symbols:check" /></div>
             </div>
@@ -55,7 +85,8 @@ import { Icon } from "@iconify/vue";
                     sliders, tabs, background videos, and more.<br></div>
             </div>
         </div>
-        <div class="process-steps-step z-[5] w-full flex items-center relative">
+
+        <div ref="three" class="process-steps-step z-[5] w-full flex items-center relative -left-[77rem]">
             <div class="process-steps-indicator">
                 <div class="process-steps-indicator-icon"><Icon icon="material-symbols:check" /></div>
             </div>
@@ -80,7 +111,8 @@ import { Icon } from "@iconify/vue";
                     sliders, tabs, background videos, and more.<br></div>
             </div>
         </div>
-        <div class="process-steps-step z-[5] w-full flex items-center relative">
+
+        <div ref="four" class="process-steps-step z-[5] w-full flex items-center relative -left-[77rem]">
             <div class="process-steps-indicator">
                 <div class="process-steps-indicator-icon"><Icon icon="material-symbols:check" /></div>
             </div>
@@ -105,7 +137,8 @@ import { Icon } from "@iconify/vue";
                     sliders, tabs, background videos, and more.<br></div>
             </div>
         </div>
-        <div class="process-steps-step z-[5] w-full flex items-center relative">
+
+        <div ref="five" class="process-steps-step z-[5] w-full flex items-center relative -left-[77rem]">
             <div class="process-steps-indicator">
                 <div class="process-steps-indicator-icon"><Icon icon="material-symbols:check" /></div>
             </div>

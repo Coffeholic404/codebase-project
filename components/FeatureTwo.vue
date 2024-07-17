@@ -1,12 +1,34 @@
 <script setup>
 import { Icon } from "@iconify/vue";
+
+const { $gsap } = useNuxtApp();
+const image = ref(null);
+
+onMounted(()=> {
+  $gsap.fromTo(image.value, 
+    { opacity: 0, x: 0}, 
+    { 
+      opacity: 1, 
+      x: -1232,
+      duration: 1,
+
+      easy: 'power3.inOut',
+      scrollTrigger: {
+        trigger: image.value,
+        start: 'top 80%', // Adjust based on when you want the animation to start
+        end: 'top 50%',
+        scrub: false,
+        toggleActions: 'play none none none',
+      },
+    });
+});
 </script>
 
 <template>
     <div class="bg-neutral-800 curve-bottom">
         <div class="section padding-bottom w-full pb-[5em] relative">
             <div class="container-md z-[5]w-full max-w-[56em] mx-auto px-[1.25em] relative">
-                <div class="feature-3-column relative">
+                <div ref="image" class="feature-3-column relative -right-[77rem]">
                     <div class="column-base relative">
                         <div class="square-h3 bg-neutral-700">
                             <div class="material-icons-outlined">
@@ -118,7 +140,7 @@ import { Icon } from "@iconify/vue";
                     src="https://assets-global.website-files.com/6239c2cd52949d0f76a8f421/6239c2ce52949d359ba8f716_bg-shape-004.png"
                     loading="lazy"
                     srcset="https://assets-global.website-files.com/6239c2cd52949d0f76a8f421/6239c2ce52949d359ba8f716_bg-shape-004-p-500.png 500w, https://assets-global.website-files.com/6239c2cd52949d0f76a8f421/6239c2ce52949d359ba8f716_bg-shape-004-p-800.png 800w, https://assets-global.website-files.com/6239c2cd52949d0f76a8f421/6239c2ce52949d359ba8f716_bg-shape-004-p-1080.png 1080w, https://assets-global.website-files.com/6239c2cd52949d0f76a8f421/6239c2ce52949d359ba8f716_bg-shape-004-p-1600.png 1600w, https://assets-global.website-files.com/6239c2cd52949d0f76a8f421/6239c2ce52949d359ba8f716_bg-shape-004-p-2000.png 2000w, https://assets-global.website-files.com/6239c2cd52949d0f76a8f421/6239c2ce52949d359ba8f716_bg-shape-004-p-2600.png 2600w, https://assets-global.website-files.com/6239c2cd52949d0f76a8f421/6239c2ce52949d359ba8f716_bg-shape-004.png 3200w"
-                    alt="" sizes="100vw" class="bg-pattern-image"></div>
+                    alt="" sizes="10vw" class="bg-pattern-image"></div>
         </div>
     </div>
 </template>

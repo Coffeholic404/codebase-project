@@ -52,7 +52,7 @@ onMounted(() => {
         trigger: img.value,
         start: 'top 80%', // Adjust based on when you want the animation to start
         end: 'top 50%',
-        scrub: true,
+        scrub: false,
         toggleActions: 'play none none none',
       },
     });

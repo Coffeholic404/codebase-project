@@ -1,14 +1,70 @@
 <script setup>
 import { Icon } from "@iconify/vue";
 
+const { $gsap } = useNuxtApp();
+  const card1 = ref(null);
+  const card2 = ref(null);
+
+  const one = ref(null);
+  const two = ref(null);
+  const three = ref(null);
+  const four = ref(null);
+  const five = ref(null);
+  const six = ref(null);
+
+  onMounted(() => {
+  const cards = [card1, card2];
+  cards.forEach((card, index) => {
+    $gsap.fromTo(card.value, 
+      { opacity: 0, x: 0 }, 
+      { 
+        opacity: 1, 
+        x: 992,
+        duration: 1,
+        delay: index * 0.5, // Different delay for each card
+        scrollTrigger: {
+          trigger: card.value,
+          start: 'top 80%', // Adjust based on when you want the animation to start
+          end: 'bottom 50%',
+          scrub: false,
+          markers: false,
+          toggleActions: 'restart none none none',
+        },
+      });
+  });
+  
+});
+
+onMounted(() => {
+  const cards = [one, two, three, four, five,six];
+  cards.forEach((card, index) => {
+    $gsap.fromTo(card.value, 
+      { opacity: 0, y: 50 }, 
+      { 
+        opacity: 1, 
+        y: 0,
+        duration: 1,
+        delay: index * 0.2, // Different delay for each card
+        scrollTrigger: {
+          trigger: card.value,
+          start: 'top 80%', // Adjust based on when you want the animation to start
+          end: 'bottom 50%',
+          scrub: false,
+          markers: false,
+          toggleActions: 'play none none none',
+        },
+      });
+  });
+});
+
 </script>
 <template>
     <div class="feature3-container w-full max-w-[64em] mx-auto px-[1.25em] static">
         <div class="feature mb-[2.5em] margin-bottom margin-4xl">
             <div class="max-width-xl w-full max-w-[40em]">
                 <div class="feature-heading mb-[1.75em] margin-bottom margin-xl">
-                    <div class="caption-holder">
-                        <div class="w-layout-grid feat-row-sm">
+                    <div ref="card1" class="caption-holder -left-[62rem]">
+                        <div class="w-layout-grid feat-row-sm ">
                             <div class="heading-caption leading-[.1em] uppercase text-[.625em] font-semibold">Feature ·
                             </div>
                             <div class="leading-[.1em] uppercase text-[.625em] font-semibold opacity-[.5]">02</div>
@@ -21,7 +77,7 @@ import { Icon } from "@iconify/vue";
                 </div>
 
 
-                <div class="w-layout-grid feat-row-md">
+                <div ref="card2" class="w-layout-grid feat-row-md -left-[62rem]">
                     <div class="section-icon-amber">
                         <Icon icon="material-symbols:fingerprint" class=" text-indigo-200" />
                     </div>
@@ -39,25 +95,37 @@ import { Icon } from "@iconify/vue";
         </div>
 
         <div class="tab-holder pl-[4em]">
-            <div class="tab-menu">
-                <a href="" 
+            <div class="tab-menu" >
+
+                <a 
+                ref="one"
+                href="" 
                 class="tab-menu-click tab-menu-current  flex text-center rounded-[.375em] justify-center items-center py-[2em] text-[.875em] font-semibold leading-[1]">
                     <p>Kanban</p>
                 </a>
-                <a href="" class="tab-link-simple tab-menu-click flex text-center rounded-[.375em] justify-center items-center py-[2em] text-[.875em] font-semibold leading-[1]">
+                <a 
+                ref="two"
+                href="" class="tab-link-simple tab-menu-click flex text-center rounded-[.375em] justify-center items-center py-[2em] text-[.875em] font-semibold leading-[1]">
                     <p>User Story Map</p>
                 </a>
-                <a href="" class="tab-link-simple tab-menu-click flex text-center rounded-[.375em] justify-center items-center py-[2em] text-[.875em] font-semibold leading-[1]">
+                <a 
+                ref="three"
+                href="" class="tab-link-simple tab-menu-click flex text-center rounded-[.375em] justify-center items-center py-[2em] text-[.875em] font-semibold leading-[1]">
                     <p>Retrospective</p>
                 </a>
-                <a href="" class="tab-link-simple tab-menu-click flex text-center rounded-[.375em] justify-center items-center py-[2em] text-[.875em] font-semibold leading-[1]">
+                <a 
+                ref="four"
+                href="" class="tab-link-simple tab-menu-click flex text-center rounded-[.375em] justify-center items-center py-[2em] text-[.875em] font-semibold leading-[1]">
                     <p>PI Planning</p>
                 </a>
-                <a href="" class="tab-link-simple tab-menu-click flex text-center rounded-[.375em] justify-center items-center py-[2em] text-[.875em] font-semibold leading-[1]">
+                <a 
+                ref="five"
+                href="" class="tab-link-simple tab-menu-click flex text-center rounded-[.375em] justify-center items-center py-[2em] text-[.875em] font-semibold leading-[1]">
                     <p>Daily Standup</p>
                 </a>
-            </div>  
-            <div class="tab-simple-content static overflow-hidden">
+            </div> 
+
+            <div ref="six" class="tab-simple-content static overflow-hidden ">
                     <div class=" static">
                         <img srcset="https://assets-global.website-files.com/6239c2cd52949d0f76a8f421/6239c2ce52949d7779a8f704_blog-post-07-p-1080.jpeg 1080w, https://assets-global.website-files.com/6239c2cd52949d0f76a8f421/6239c2ce52949d7779a8f704_blog-post-07.jpg 1280w" alt="" src="https://assets-global.website-files.com/6239c2cd52949d0f76a8f421/6239c2ce52949d7779a8f704_blog-post-07.jpg" loading="lazy" sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 991px) 96vw, 90vw" class="image-contain rounded-[.5em] relative overflow-hidden max-w-full align-middle inline-block z-[5] w-full leading-[1] object-contain">
                     </div>

@@ -1,12 +1,31 @@
 <script setup>
+const { $gsap } = useNuxtApp();
+const img = ref(null);
 
+onMounted(() => {
+    $gsap.fromTo(img.value, 
+    { opacity: 0, y: 50}, 
+    { 
+      opacity: 1, 
+      y: 0,
+      delay:1,
+      easy: "power2.inout",
+      scrollTrigger: {
+        trigger: img.value,
+        start: 'top 50%', // Adjust based on when you want the animation to start
+        end: 'top 50%',
+        scrub: false,
+        toggleActions: 'play none none none',
+      },
+    });
+});
 </script>
 
 <template>
     <div class="container-lg z-[5] w-full max-w-[64em] mx-auto p-[1.25em] relative">
-        <div class="footer-grid">
-            <div
-                class="footer-1-cta-box z-[5] bg-primary text-center rounded-[.5em] mt-[-4em] mb-[3em] py-[4em] px-[6em] overflow-hidden flex flex-col justify-center items-center">
+        <div  class="footer-grid">
+
+            <div ref="img" class="footer-1-cta-box z-[5] bg-primary text-center rounded-[.5em] mt-[-4em] mb-[3em] py-[4em] px-[6em] overflow-hidden flex flex-col justify-center items-center">
                 <div class="footer-1-cta-grid">
                     <h2 class="cta-title-sm text-white col-span-1 row-span-1">Move
                         even faster with <span class="logo-inside-text">Norman</span> UI Kit for Webflow.</h2>
@@ -25,7 +44,7 @@
                             <div class="button-hover-background">
                             </div>
                         </a>
-                    </div>
+                </div>
                 </div>
 
 

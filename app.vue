@@ -1,5 +1,27 @@
 <script setup>
 import { Icon } from "@iconify/vue";
+const { $gsap } = useNuxtApp();
+const image = ref(null);
+
+onMounted(()=> {
+  $gsap.fromTo(image.value, 
+    { opacity: 0, x: 0}, 
+    { 
+      opacity: 1, 
+      x: 1232,
+      duration: 1,
+
+      easy: 'power3.inOut',
+      scrollTrigger: {
+        trigger: image.value,
+        start: 'top 80%', // Adjust based on when you want the animation to start
+        end: 'top 50%',
+        scrub: false,
+        toggleActions: 'play none none none',
+      },
+    });
+});
+
 </script>
 
 <template>
@@ -98,9 +120,9 @@ import { Icon } from "@iconify/vue";
     </div>
   </article>
 
-  <article class=" banner-section min-h-[100dvh] py-[10em] rounded-[.5em] bg-teal-700 w-full" id="banner">
-    <div class="banner-card-wrapper w-full max-w-[56em]   px-[1.25em] mx-auto rounded-[.5em] z-[10000]">
-      <div class="banner-card relative rounded-[.5em]  p-[4em]">
+  <article class=" banner-section min-h-[100dvh] py-[10em] rounded-[.5em] bg-teal-700 w-full " id="banner">
+    <div class="banner-card-wrapper w-full max-w-[56em]   px-[1.25em] mx-auto rounded-[.5em] z-[10000] ">
+      <div ref="image" class="banner-card relative rounded-[.5em]  p-[4em] -left-[77rem] z-[1000]">
         <img
           src="https://assets-global.website-files.com/6239c2cd52949d0f76a8f421/6239c2ce52949dbfc1a8f6cf_Rectangle-23.jpg"
           loading="lazy"

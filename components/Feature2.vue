@@ -17,13 +17,13 @@ onMounted(() => {
     { 
       opacity: 1, 
       x: 992,
-      delay:3,
+      delay:1,
       ease: 'power2.inOut',
       scrollTrigger: {
         trigger: feat.value,
         start: 'top 80%', // Adjust based on when you want the animation to start
         end: 'top 50%',
-        scrub: true,
+        scrub: false,
         toggleActions: 'restart none none none',
       },
     });
@@ -33,28 +33,29 @@ onMounted(() => {
     { 
       opacity: 1, 
       x: 992,
-      delay:4,
+      delay:1,
       ease: 'power2.inOut',
       scrollTrigger: {
         trigger: feat2.value,
         start: 'top 80%', // Adjust based on when you want the animation to start
         end: 'top 50%',
-        scrub: true,
+        scrub: false,
         toggleActions: 'restart none none none',
       },
     });
 
     $gsap.fromTo(img.value, 
-    { opacity: 0, y: 60 }, 
+    { opacity: 0, y: 50 }, 
     { 
       opacity: 1, 
       y: 0,
-      delay:3,
-      ease: 'power2.inOut',
+      delay:2,
+      ease: 'power3.inOut',
       scrollTrigger: {
         trigger: img.value,
         start: 'top 90%', // Adjust based on when you want the animation to start
         end: 'top 50%',
+        scrub: false,
         toggleActions: 'restart none none none',
       },
     });
