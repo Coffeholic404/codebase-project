@@ -34,6 +34,7 @@ onMounted(() => {
       opacity: 1, 
       x: 992,
       delay:1,
+      duration: 1,
       ease: 'power2.inOut',
       scrollTrigger: {
         trigger: feat2.value,

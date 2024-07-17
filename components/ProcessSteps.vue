@@ -20,8 +20,8 @@ onMounted(()=> {
         delay: index * 0.2, // Different delay for each card
         scrollTrigger: {
           trigger: card.value,
-          start: 'top 80%', // Adjust based on when you want the animation to start
-          end: 'bottom 50%',
+          start: 'top 70%', // Adjust based on when you want the animation to start
+          end: 'bottom 40%',
           scrub: false,
           markers: false,
           toggleActions: 'play none none none',

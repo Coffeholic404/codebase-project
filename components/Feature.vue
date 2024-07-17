@@ -47,13 +47,14 @@ onMounted(() => {
     { 
       opacity: 1, 
       x: 992,
-      delay:3,
+      duration: 1,
+      easy: 'power2.inOut',
       scrollTrigger: {
         trigger: img.value,
         start: 'top 80%', // Adjust based on when you want the animation to start
         end: 'top 50%',
         scrub: false,
-        toggleActions: 'play none none none',
+        toggleActions: 'restart none none none',
       },
     });
 });
