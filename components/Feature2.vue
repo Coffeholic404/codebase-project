@@ -24,7 +24,7 @@ onMounted(() => {
         start: 'top 80%', // Adjust based on when you want the animation to start
         end: 'top 50%',
         scrub: false,
-        toggleActions: 'restart none none none',
+        toggleActions: 'play none none none',
       },
     });
 
@@ -41,7 +41,7 @@ onMounted(() => {
         start: 'top 80%', // Adjust based on when you want the animation to start
         end: 'top 50%',
         scrub: false,
-        toggleActions: 'restart none none none',
+        toggleActions: 'play none none none',
       },
     });
 
@@ -57,7 +57,7 @@ onMounted(() => {
         start: 'top 90%', // Adjust based on when you want the animation to start
         end: 'top 50%',
         scrub: false,
-        toggleActions: 'restart none none none',
+        toggleActions: 'play none none none',
       },
     });
 

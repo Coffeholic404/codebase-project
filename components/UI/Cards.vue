@@ -25,7 +25,7 @@ onMounted(() => {
           end: 'bottom 50%',
           scrub: false,
           markers: false,
-          toggleActions: 'restart none none none',
+          toggleActions: 'play none none none',
         },
       });
   });
